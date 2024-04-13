@@ -1,0 +1,17 @@
+*** Settings ***
+Library     RequestsLibrary
+
+
+*** Test Cases ***
+No Token Should Return 401
+    Get                     https://api.practicesoftwaretesting.com/invoices                        expected_status=401
+
+Retrieve Invoices
+    ${account}              Create Dictionary       email=customer@practicesoftwaretesting.com      password=welcome01
+    ${response}             POST                    https://api.practicesoftwaretesting.com/users/login                     json=${account}
+    Log To Console          ${response.json()}
+
+    ${headers}              Create Dictionary       Authorization=Bearer ${response.json()}[access_token]
+    ${response}             Get                     https://api.practicesoftwaretesting.com/invoices                        headers=${headers}
+    Log To Console          ${response.json()}
+    Status Should Be        200

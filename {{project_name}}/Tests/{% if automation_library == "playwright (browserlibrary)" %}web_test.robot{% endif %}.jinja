@@ -1,0 +1,21 @@
+*** Settings ***
+Library         Browser
+
+Test Setup      Open Browser And Set Context
+
+
+*** Test Cases ***
+Login Successfully
+    Click                   data-test=nav-sign-in
+    Type Text               data-test=email         customer@practicesoftwaretesting.com
+    Type Text               data-test=password      welcome01
+    Click                   data-test=login-submit
+    Get Text                h1                      contains                My account
+
+
+*** Keywords ***
+Open Browser And Set Context
+    New Browser     chromium    headless=false
+    New Context     viewport={'width': 1920, 'height': 1080}
+    New Page        https://practicesoftwaretesting.com
+    Get Title       contains    Practice Software Testing

@@ -1,0 +1,20 @@
+[tool.robotidy]
+overwrite = true
+transform = [
+    "AlignSettingsSection",
+    "AlignTestCasesSection",
+    "AlignVariablesSection",
+    "AlignKeywordsSection:alignment_type=auto",
+    "MergeAndOrderSections",
+    "OrderSettings",
+    "OrderSettingsSection:imports_order=library,resource,variables",
+    "NormalizeAssignments:equal_sign_type=remove",
+    "NormalizeNewLines:consecutive_lines=1",
+    "NormalizeSectionHeaderName",
+    "NormalizeSettingName",
+    "NormalizeTags:case=lowercase",
+    "RenameKeywords",
+    "RenameTestCases:capitalize_each_word=True",
+    "SplitTooLongLine:line_length=180:align_new_line=True",
+    "NormalizeSeparators:align_new_line=True"
+]

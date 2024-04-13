@@ -1,0 +1,25 @@
+*** Settings ***
+Library             SeleniumLibrary
+
+Test Setup          Open Browser And Wait
+Test Teardown       Close All Browsers
+
+
+*** Test Cases ***
+Login Successfully
+    Click Element           css:[data-test="nav-sign-in"]
+    Login                   customer@practicesoftwaretesting.com
+    Wait Until Element Contains                     css:h1                  My account
+
+
+*** Keywords ***
+Open Browser And Wait
+    [Documentation]    Open browser and set implicit wait
+    Open Browser    https://www.practicesoftwaretesting.com         chrome
+    Set Selenium Implicit Wait      10s
+
+Login
+    [Arguments]         ${email}    ${password}=welcome01
+    Input Text          css:[data-test="email"]             ${email}
+    Input Text          css:[data-test="password"]          ${password}
+    Click Element       css:[data-test="login-submit"]

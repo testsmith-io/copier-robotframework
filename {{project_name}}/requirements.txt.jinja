@@ -1,0 +1,11 @@
+robotframework==7.0
+robotframework-tidy==4.10.0
+{% if automation_library == 'selenium webdriver (seleniumlibrary)' -%}
+robotframework-seleniumlibrary==6.2.0
+selenium==4.19.0
+{% elif automation_library == 'playwright (browserlibrary)' -%}
+robotframework-browser==18.3.0
+{% endif -%}
+{% if api_testing -%}
+robotframework-requests==0.9.7
+{% endif -%}

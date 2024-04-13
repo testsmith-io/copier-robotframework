@@ -1,0 +1,14 @@
+project_name:
+  type: str
+  help: The name of your Robot Framework project
+automation_library:
+  type: str
+  help: Which browser automation tool would you like to use?
+  choices:
+    - selenium webdriver (seleniumlibrary)
+    - playwright (browserlibrary)
+  default: selenium webdriver
+api_testing:
+  type: bool
+  help: Would you also like to test APIs?
+  default: no
