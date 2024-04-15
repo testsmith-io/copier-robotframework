@@ -1,0 +1,65 @@
+name: Robot Framework Tests 🤖
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  run-robot-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: browser-actions/setup-chrome@v1
+      - run: chrome --version
+
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          {% if automation_library == 'playwright (browserlibrary)' -%}
+          rfbrowser init
+          {% endif -%}
+
+{% if not allure_reporting %}
+      - name: Run Robot Framework tests
+        run: |
+          robot -d Results Tests
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: robot-results
+          path: Results/
+{% endif -%}
+
+{% if allure_reporting %}
+      - name: Install Allure CLI
+        run: |
+          npm install -g allure-commandline
+      - name: Run Robot Framework tests with Allure
+        run: |
+          robot --listener allure_robotframework --outputdir Results/AllureResults Tests
+
+      - name: Generate Allure report
+        run: |
+          allure generate Results/AllureResults -o Results/AllureReport --clean
+
+      - name: Upload Allure report
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: allure-report
+          path: Results/AllureReport
+{% endif -%}

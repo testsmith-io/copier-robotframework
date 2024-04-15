@@ -1,0 +1,41 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches and logs
+.cache/
+logs/
+output.xml
+log.html
+report.html
+*.log
+*.tmp
+
+# Virtual environment
+.venv/
+
+# User-specific files
+*.swp
+*~
+.Session.vim
+.project
+.pydevproject
+.settings/
+
+# IDE specific files
+.idea/
+.vscode/
+*.sublime-workspace
+
+# Allure report directory
+allure-report/
+allure-results/
+
+# Generated files by Selenium
+geckodriver.log
+chromedriver.log
+
+# Robot Framework reports
+Results/*
+*.retry

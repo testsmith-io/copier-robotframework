@@ -15,7 +15,8 @@ Login Successfully
 *** Keywords ***
 Open Browser And Wait
     [Documentation]    Open browser and set implicit wait
-    Open Browser    https://www.practicesoftwaretesting.com         chrome
+    Open Browser    https://www.practicesoftwaretesting.com         headlesschrome
+    Set Window Size     ${1400}     ${600}
     Set Selenium Implicit Wait      10s
 
 Login

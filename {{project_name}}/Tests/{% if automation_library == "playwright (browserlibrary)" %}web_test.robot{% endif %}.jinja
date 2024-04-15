@@ -15,7 +15,7 @@ Login Successfully
 
 *** Keywords ***
 Open Browser And Set Context
-    New Browser     chromium    headless=false
+    New Browser     chromium    headless=true
     New Context     viewport={'width': 1920, 'height': 1080}
     New Page        https://practicesoftwaretesting.com
     Get Title       contains    Practice Software Testing

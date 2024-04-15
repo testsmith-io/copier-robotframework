@@ -1,0 +1,63 @@
+# Robot Framework Test Automation Suite
+
+Welcome to your newly scaffolded Robot Framework project. This project is designed to provide a robust framework for automating tests, customizable based on your specific needs during setup. Depending on your responses during the project generation, support for Selenium, Playwright, API testing, and Allure reporting may be included.
+
+## Features
+
+{% if automation_library == 'selenium webdriver (seleniumlibrary)' -%}
+- **Selenium**: Automate web browsers to simulate user interactions.
+{% endif -%}
+{% if automation_library == 'playwright (browserlibrary)' -%}
+- **Playwright**: Test across browsers with a single API for end-to-end testing.
+{% endif -%}
+{% if api_testing -%}
+- **API Testing**: Facilitate testing of RESTful APIs using HTTP requests.
+{% endif -%}
+{% if allure_reporting -%}
+- **Allure Reporting**: Generate comprehensive and interactive test reports.
+{% endif -%}
+
+## Prerequisites
+
+Before you begin, ensure you have Python installed.
+
+- [Python](https://www.python.org/downloads/)
+
+{% if automation_library == 'selenium webdriver (seleniumlibrary)' -%}
+## Selenium
+
+Selenium automates browsers, allowing you to perform tasks such as testing web applications across different browsers and environments. Install the necessary WebDriver for your chosen browser(s) and ensure it is in your system's PATH.
+{% endif -%}
+{% if automation_library == 'playwright (browserlibrary)' -%}
+## Playwright
+
+Playwright provides a single API to write tests that run across all modern browsers. It supports parallel executions and captures screenshots, videos, and other artifacts during test execution.
+{% endif -%}
+{% if api_testing -%}
+## API Testing
+
+This setup includes libraries for API testing, enabling you to send HTTP requests to test RESTful APIs. Libraries such as RequestsLibrary for Robot Framework are used for this purpose.
+{% endif -%}
+{% if allure_reporting -%}
+## Allure Reporting
+
+Allure Framework helps in creating detailed and attractive test execution reports that provide insights into test coverage and success rates. 
+{% endif -%}
+
+## Running Tests
+
+To run your tests, use the following command:
+
+`robot -d Results Tests`
+
+{% if allure_reporting -%}
+To run your tests with Allure Reporting, use the following command:
+
+`robot --listener 'allure_robotframework;./Results/allure' -d Results Tests`
+
+If Allure reporting is enabled, generate reports using:
+
+`allure serve results`
+
+> You might need to install Allure first [https://allurereport.org/docs/gettingstarted-installation/](https://allurereport.org/docs/gettingstarted-installation/)
+{% endif -%}

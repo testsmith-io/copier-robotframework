@@ -12,3 +12,11 @@ api_testing:
   type: bool
   help: Would you also like to test APIs?
   default: no
+allure_reporting:
+  type: bool
+  help: Would you like to add Allure Reporting?
+  default: no
+github_actions:
+  type: bool
+  help: Would you like to add a default GitHub Action, to run your tests in a build pipeline?
+  default: no
