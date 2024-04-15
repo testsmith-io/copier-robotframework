@@ -8,6 +8,7 @@ This is a [Copier](https://copier.readthedocs.io/en/stable/) project designed to
 4. `copier copy https://github.com/testsmith-io/copier-robotframework.git .`
 
 # TODO
-[ ] Multi Browser Configuration
-[ ] Implement Cloud Providers
-[ ] Implement Secrets
+
+* [ ] Multi Browser Configuration
+* [ ] Implement Cloud Providers
+* [ ] Implement Secrets
