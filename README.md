@@ -1,4 +1,4 @@
-This is a [Copier](https://copier.readthedocs.io/en/stable/) project designed to scaffold a Robot Framework project for you. It will interactively ask you a few questions and, based on your answers, generate the project.
+This is a [Copier](https://copier.readthedocs.io/en/stable/) project designed to scaffold a Robot Framework project for you. It will interactively ask you a few questions and generate the project based on your answers.
 
 # How to use it?
 
@@ -12,3 +12,13 @@ This is a [Copier](https://copier.readthedocs.io/en/stable/) project designed to
 * [ ] Multi Browser Configuration
 * [ ] Implement Cloud Providers
 * [ ] Implement Secrets
+
+# Support This Project
+
+If you find this project useful and want to support its ongoing development, consider <a href="https://www.buymeacoffee.com/roydekleijn"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=roydekleijn&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>!
+
+I appreciate your support!
+
+
+
+
